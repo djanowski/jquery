@@ -1,7 +1,7 @@
 module("css");
 
 test("css(String|Hash)", function() {
-	expect(23);
+	expect(24);
 
 	equals( jQuery('#main').css("display"), 'none', 'Check for css property "display"');
 
@@ -38,6 +38,8 @@ test("css(String|Hash)", function() {
 	equals( jQuery('#empty').css('opacity'), '0', "Assert opacity is accessible via filter property set in stylesheet in IE" );
 	jQuery('#empty').css({ opacity: '1' });
 	equals( jQuery('#empty').css('opacity'), '1', "Assert opacity is taken from style attribute when set vs stylesheet in IE with filters" );
+
+	equals( jQuery('#area1').css('padding'), '0px 0px 10px 15px', "Assert multi-valued CSS properties are readable under IE" );
 });
 
 test("css(String, Object)", function() {
